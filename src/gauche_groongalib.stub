@@ -1,0 +1,18 @@
+;;;
+;;; gauche_groongalib.stub
+;;;
+
+"
+#include \"gauche_groonga.h\"
+"
+
+;; The following entry is a dummy one.
+;; Replace it for your definitions.
+
+(define-cproc test-gauche_groonga () ::<const-cstring>
+  (result "gauche_groonga is working"))
+
+
+;; Local variables:
+;; mode: scheme
+;; end:
