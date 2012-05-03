@@ -85,3 +85,12 @@
 (define-enum GRN_TOO_SMALL_LIMIT)
 (define-enum GRN_CAS_ERROR)
 (define-enum GRN_UNSUPPORTED_COMMAND_VERSION)
+
+;; grn_encoding
+(define-enum GRN_ENC_DEFAULT)
+(define-enum GRN_ENC_NONE)
+(define-enum GRN_ENC_EUC_JP)
+(define-enum GRN_ENC_UTF8)
+(define-enum GRN_ENC_SJIS)
+(define-enum GRN_ENC_LATIN1)
+(define-enum GRN_ENC_KOI8R)

@@ -116,5 +116,20 @@
 
 (mktest grn-rc-list)
 
+(define grn-encoding-list
+  `((GRN_ENC_DEFAULT ,GRN_ENC_DEFAULT)
+    (GRN_ENC_NONE ,GRN_ENC_NONE)
+    (GRN_ENC_EUC_JP ,GRN_ENC_EUC_JP)
+    (GRN_ENC_UTF8 ,GRN_ENC_UTF8)
+    (GRN_ENC_SJIS ,GRN_ENC_SJIS)
+    (GRN_ENC_LATIN1 ,GRN_ENC_LATIN1)
+    (GRN_ENC_KOI8R ,GRN_ENC_KOI8R)))
+
+(define (mktest-proc index var val)
+  (let* ([expected index])
+    (test* (format #f "grn_encoding enum value of ~a" var) expected val)))
+
+(mktest grn-encoding-list)
+
 
 (test-end)
