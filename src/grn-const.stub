@@ -1,5 +1,6 @@
 
 "
+#include \"groonga.h\"
 #include \"gauche_groonga.h\"
 "
 
