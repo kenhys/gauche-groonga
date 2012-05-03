@@ -1,12 +1,11 @@
 ;;;
-;;; gauche_groonga
+;;; groonga
 ;;;
 
-(define-module gauche_groonga
-  (export test-gauche_groonga ;; dummy
-          )
+(define-module groonga
+  (export-all)
   )
-(select-module gauche_groonga)
+(select-module groonga)
 
 ;; Loads extension
 (dynamic-load "gauche_groonga")
