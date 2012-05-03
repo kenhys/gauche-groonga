@@ -99,3 +99,9 @@
 (define-enum GRN_COMMAND_VERSION_DEFAULT)
 (define-enum GRN_COMMAND_VERSION_1)
 (define-enum GRN_COMMAND_VERSION_2)
+
+;; grn_command_version alias
+(define-enum GRN_COMMAND_VERSION_MIN)
+(define-enum GRN_COMMAND_VERSION_STABLE)
+(define-enum GRN_COMMAND_VERSION_MAX)
+

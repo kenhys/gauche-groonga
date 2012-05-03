@@ -141,11 +141,32 @@
 ;;;
 ;;; grn_command_version
 ;;;
+(test-section "grn_command_version")
 (define grn-command-version
   `((GRN_COMMAND_VERSION_DEFAULT ,GRN_COMMAND_VERSION_DEFAULT)
     (GRN_COMMAND_VERSION_1 ,GRN_COMMAND_VERSION_1)
     (GRN_COMMAND_VERSION_2 ,GRN_COMMAND_VERSION_2)))
 
 (mktest grn-command-version)
+
+;;;
+;;; grn_command_version alias
+;;;
+(test-section "grn_command_version alias")
+(define grn-command-version-alias
+  `((GRN_COMMAND_VERSION_MIN ,GRN_COMMAND_VERSION_MIN ,GRN_COMMAND_VERSION_1)
+    (GRN_COMMAND_VERSION_STABLE ,GRN_COMMAND_VERSION_STABLE ,GRN_COMMAND_VERSION_1)
+    (GRN_COMMAND_VERSION_MAX ,GRN_COMMAND_VERSION_MAX ,GRN_COMMAND_VERSION_2)))
+
+(define (mktest-proc index arg)
+  (let* ([var (~ arg 0)]
+	 [val (~ arg 1)]
+	 [expected (~ arg 2)])
+    (test* (format #f "grn_encoding alias value of ~a" var) expected val)))
+
+(define (mktest arg)
+  (map-with-index
+   (^ (index arg) (mktest-proc index arg)) arg))
+(mktest grn-command-version-alias)
 
 (test-end)
