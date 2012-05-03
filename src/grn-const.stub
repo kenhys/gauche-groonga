@@ -94,3 +94,8 @@
 (define-enum GRN_ENC_SJIS)
 (define-enum GRN_ENC_LATIN1)
 (define-enum GRN_ENC_KOI8R)
+
+;; grn_command_version
+(define-enum GRN_COMMAND_VERSION_DEFAULT)
+(define-enum GRN_COMMAND_VERSION_1)
+(define-enum GRN_COMMAND_VERSION_2)

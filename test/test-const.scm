@@ -28,6 +28,9 @@
 (test* "GRN_TRUE" 1 GRN_TRUE)
 (test* "GRN_FALSE" 0 GRN_FALSE)
 
+;;;
+;;; grn_rc
+;;;
 (test-section "grn_rc")
 
 (test* "GRN_SUCCESS" 0 GRN_SUCCESS)
@@ -116,6 +119,10 @@
 
 (mktest grn-rc-list)
 
+;;;
+;;; grn_encoding
+;;;
+(test-section "grn_encoding")
 (define grn-encoding-list
   `((GRN_ENC_DEFAULT ,GRN_ENC_DEFAULT)
     (GRN_ENC_NONE ,GRN_ENC_NONE)
@@ -131,5 +138,14 @@
 
 (mktest grn-encoding-list)
 
+;;;
+;;; grn_command_version
+;;;
+(define grn-command-version
+  `((GRN_COMMAND_VERSION_DEFAULT ,GRN_COMMAND_VERSION_DEFAULT)
+    (GRN_COMMAND_VERSION_1 ,GRN_COMMAND_VERSION_1)
+    (GRN_COMMAND_VERSION_2 ,GRN_COMMAND_VERSION_2)))
+
+(mktest grn-command-version)
 
 (test-end)
