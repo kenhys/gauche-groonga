@@ -9,6 +9,8 @@
 #include <gauche.h>
 #include <gauche/extend.h>
 
+#include "groonga.h"
+
 SCM_DECL_BEGIN
 
 /*
