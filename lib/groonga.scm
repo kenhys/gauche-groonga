@@ -8,7 +8,7 @@
 (select-module groonga)
 
 ;; Loads extension
-(dynamic-load "gauche_groonga")
+(dynamic-load "gauche--groonga")
 
 ;;
 ;; Put your Scheme definitions here
