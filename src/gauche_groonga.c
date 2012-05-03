@@ -27,7 +27,7 @@ void Scm_Init_gauche_groonga(void)
     SCM_INIT_EXTENSION(gauche_groonga);
 
     /* Create the module if it doesn't exist yet. */
-    mod = SCM_MODULE(SCM_FIND_MODULE("gauche_groonga", TRUE));
+    mod = SCM_MODULE(SCM_FIND_MODULE("groonga", TRUE));
 
     /* Register stub-generated procedures */
     Scm_Init_gauche_groongalib(mod);
