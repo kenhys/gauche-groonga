@@ -6,12 +6,19 @@
 #include \"gauche_groonga.h\"
 "
 
+(include "gauche-groonga.types")
+
 ;; The following entry is a dummy one.
 ;; Replace it for your definitions.
 
 (define-cproc test-gauche_groonga () ::<const-cstring>
   (result "gauche_groonga is working"))
 
+(define-cproc grn-init () ::<grn-rc>
+  (result (grn_init)))
+
+(define-cproc grn-fin () ::<grn-rc>
+  (result (grn_fin)))
 
 ;; Local variables:
 ;; mode: scheme
