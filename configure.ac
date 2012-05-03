@@ -44,6 +44,11 @@ AC_SUBST(SOEXT)
 AC_SUBST(OBJEXT)
 AC_SUBST(EXEEXT)
 
+GROONGA_CFLAGS=`pkg-config --cflags groonga`
+GROONGA_LIBS=`pkg-config --libs groonga`
+AC_SUBST(GROONGA_CFLAGS)
+AC_SUBST(GROONGA_LIBS)
+
 ac_default_prefix=`"$GAUCHE_CONFIG" --prefix`
 
 GAUCHE_PKGINCDIR=`"$GAUCHE_CONFIG" --pkgincdir`
