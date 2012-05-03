@@ -1,12 +1,12 @@
 ;;;
-;;; Test gauche_groonga
+;;; Test groonga
 ;;;
 
 (use gauche.test)
 
-(test-start "gauche_groonga")
-(use gauche_groonga)
-(test-module 'gauche_groonga)
+(test-start "groonga")
+(use groonga)
+(test-module 'groonga)
 
 ;; The following is a dummy test code.
 ;; Replace it for your tests.
