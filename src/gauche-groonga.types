@@ -1,0 +1,4 @@
+
+
+(define-type <grn-rc> "int" #f
+  "SCM_GRN_RC_P" "SCM_GRN_RC")
