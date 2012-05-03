@@ -1,0 +1,11 @@
+
+"
+#include \"gauche_groonga.h\"
+"
+
+
+(define-enum GRN_ID_NIL)
+(define-enum GRN_ID_MAX)
+
+(define-enum GRN_TRUE)
+(define-enum GRN_FALSE)
