@@ -44,8 +44,8 @@ all :
 	cd src;$(MAKE)
 
 check : all
-	@rm -f test.log
-	sh test/run-test.sh >> test.log
+	@rm -f test.record
+	sh test/run-test.sh > test.log
 	@cat test.record
 
 install : all
