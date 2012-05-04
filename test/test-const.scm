@@ -162,7 +162,7 @@
   (let* ([var (~ arg 0)]
 	 [val (~ arg 1)]
 	 [expected (~ arg 2)])
-    (test* (format #f "grn_encoding alias value of ~a" var) expected val)))
+    (test* (format #f "grn_command_version alias value of ~a" var) expected val)))
 
 (define (mktest arg)
   (map-with-index
