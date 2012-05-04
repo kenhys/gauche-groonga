@@ -169,4 +169,30 @@
    (^ (index arg) (mktest-proc index arg)) arg))
 (mktest grn-command-version-alias)
 
+;;;
+;;; grn_log_level
+;;;
+(test-section "grn_log_level")
+(define grn-log-level
+  `((GRN_LOG_NONE ,GRN_LOG_NONE)
+    (GRN_LOG_EMERG ,GRN_LOG_EMERG)
+    (GRN_LOG_ALERT ,GRN_LOG_ALERT)
+    (GRN_LOG_CRIT ,GRN_LOG_CRIT)
+    (GRN_LOG_ERROR ,GRN_LOG_ERROR)
+    (GRN_LOG_WARNING ,GRN_LOG_WARNING)
+    (GRN_LOG_NOTICE ,GRN_LOG_NOTICE)
+    (GRN_LOG_INFO ,GRN_LOG_INFO)
+    (GRN_LOG_DEBUG ,GRN_LOG_DEBUG)
+    (GRN_LOG_DUMP ,GRN_LOG_DUMP)))
+(define (mktest-proc index arg)
+  (let* ([var (~ arg 0)]
+	 [val (~ arg 1)]
+	 [expected index])
+    (test* (format #f "grn_log_level value of ~a" var) expected val)))
+
+(define (mktest arg)
+  (map-with-index
+   (^ (index arg) (mktest-proc index arg)) arg))
+(mktest grn-command-version-alias)
+
 (test-end)
