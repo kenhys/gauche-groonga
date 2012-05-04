@@ -193,6 +193,6 @@
 (define (mktest arg)
   (map-with-index
    (^ (index arg) (mktest-proc index arg)) arg))
-(mktest grn-command-version-alias)
+(mktest grn-log-level)
 
 (test-end)
