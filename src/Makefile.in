@@ -47,7 +47,7 @@ $(srcdir)/grn-const.stub
 
 all : $(TARGET)
 
-gauche--groonga.$(SOEXT): $(gauche_groonga_SRCS)
+gauche--groonga.$(SOEXT): $(gauche_groonga_SRCS) gauche_groonga.h
 	$(GAUCHE_PACKAGE) compile \
 	--local=$(LOCAL_PATHS) --verbose \
         --ldflags="$(LDFLAGS)" --libs="$(LIBS)" --cflags="$(CPPFLAGS)" \

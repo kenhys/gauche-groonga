@@ -4,6 +4,7 @@
 
 "
 #include \"gauche_groonga.h\"
+#include \"groonga.h\"
 "
 
 (include "gauche-groonga.types")
@@ -19,6 +20,14 @@
 
 (define-cproc grn-fin () ::<grn-rc>
   (result (grn_fin)))
+
+(define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
+  ()
+  ()
+  [allocator
+   (let* ([ctx::ScmGrnObj* (SCM_ALLOCATE ScmGrnObj klass)])
+     (SCM_SET_CLASS ctx klass)
+     (return (SCM_OBJ ctx)))])
 
 ;; Local variables:
 ;; mode: scheme
