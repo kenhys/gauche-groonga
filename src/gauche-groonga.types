@@ -6,3 +6,6 @@
 (define-type <grn-obj>  "ScmGrnObj*" #f
   "SCM_GRN_OBJ_P" "SCM_GRN_OBJ")
 
+(define-type <grn-ctx>  "ScmGrnCtx*" #f
+  "SCM_GRN_CTX_P" "SCM_GRN_CTX")
+

@@ -32,6 +32,17 @@ SCM_CLASS_DECL(Scm_GrnObjClass);
 #define SCM_GRN_OBJ(obj) ((ScmGrnObj*)(obj))
 #define SCM_GRN_OBJ_P(obj) (SCM_XTYPEP(obj, SCM_CLASS_GRN_OBJ))
 
+/* grn_ctx */
+typedef struct ScmGrnCtxRec {
+SCM_HEADER;
+grn_ctx h;
+} ScmGrnCtx;
+
+SCM_CLASS_DECL(Scm_GrnCtxClass);
+#define SCM_CLASS_GRN_CTX (&Scm_GrnCtxClass)
+#define SCM_GRN_CTX(obj) ((ScmGrnCtx*)(obj))
+#define SCM_GRN_CTX_P(obj) (SCM_XTYPEP(obj, SCM_CLASS_GRN_CTX))
+
 /* Epilogue */
 SCM_DECL_END
 

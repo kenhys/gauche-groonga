@@ -29,6 +29,14 @@
      (SCM_SET_CLASS ctx klass)
      (return (SCM_OBJ ctx)))])
 
+(define-cclass <grn-ctx> :base "ScmGrnCtx*" "Scm_GrnCtxClass"
+  ()
+  ()
+  [allocator
+   (let* ([ctx::ScmGrnCtx* (SCM_ALLOCATE ScmGrnCtx klass)])
+     (SCM_SET_CLASS ctx klass)
+     (return (SCM_OBJ ctx)))])
+
 ;; Local variables:
 ;; mode: scheme
 ;; end:
