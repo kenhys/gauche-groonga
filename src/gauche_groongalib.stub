@@ -21,6 +21,54 @@
 (define-cproc grn-fin () ::<grn-rc>
   (result (grn_fin)))
 
+(define-cproc grn-ctx-init
+  (ctx::<grn-ctx> flags::<int>) ::<grn-rc>
+  (result (grn_ctx_init (& (-> ctx h)) flags)))
+
+(define-cproc grn-ctx-fin
+  (ctx::<grn-ctx>) ::<grn-rc>
+  (result (grn_ctx_fin (& (-> ctx h)))))
+
+(define-cproc grn-ctx-open
+  (flags::<int>) ::<grn-ctx>
+  (let* ([ctx::ScmGrnCtx* (SCM_NEW ScmGrnCtx)]
+	 )
+    (SCM_SET_CLASS ctx SCM_CLASS_GRN_CTX)
+    (set! (-> ctx h) (* (grn_ctx_open flags)))
+    (result ctx)))
+
+(define-cproc grn-ctx-close
+  (ctx::<grn-ctx>) ::<grn-rc>
+  (result (grn_ctx_close (& (-> ctx h)))))
+
+(define-cproc grn-get-default-encoding () ::<grn-encoding>
+  (result (grn_get_default_encoding)))
+
+(define-cproc grn-set-default-encoding
+  (encoding::<uint>) ::<grn-rc>
+  (result (grn_set_default_encoding encoding)))
+
+(define-cproc grn-get-version () ::<const-cstring>
+  (result (grn_get_version)))
+
+(define-cproc grn-get-package () ::<const-cstring>
+  (result (grn_get_package)))
+
+(define-cproc grn-get-default-command-version () ::<grn-command-version>
+  (result (grn_get_default_command_version)))
+
+(define-cproc grn-set-default-command-version
+  (version::<uint>) ::<grn-rc>
+  (result (grn_set_default_command_version version)))
+
+(define-cproc grn-ctx-get-command-version
+  (ctx::<grn-ctx>) ::<grn-command-version>
+  (result (grn_ctx_get_command_version (& (-> ctx h)))))
+
+(define-cproc grn-ctx-set-command-version
+  (ctx::<grn-ctx> version::<uint>) ::<grn-rc>
+  (result (grn_ctx_set_command_version (& (-> ctx h)) version)))
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()

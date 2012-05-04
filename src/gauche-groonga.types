@@ -3,6 +3,13 @@
 (define-type <grn-rc> "int" #f
   "SCM_GRN_RC_P" "SCM_GRN_RC")
 
+(define-type <grn-encoding> "int" #f
+  "SCM_GRN_ENCODING_P" "SCM_GRN_ENCODING")
+
+(define-type <grn-command-version> "int" #f
+  "SCM_GRN_COMMAND_VERSION_P" "SCM_GRN_COMMAND_VERSION")
+
+
 (define-type <grn-obj>  "ScmGrnObj*" #f
   "SCM_GRN_OBJ_P" "SCM_GRN_OBJ")
 
