@@ -23,7 +23,7 @@ EXEEXT = @EXEEXT@
 LOCAL_PATHS = "@LOCAL_PATHS@"
 
 CPPFLAGS       = -I. @GROONGA_CFLAGS@
-LIBS           = @GROONGA_LIBS@ @LIBS@
+LIBS           = @GROONGA_LIBS@ @LIBS@ -lstdc++
 
 # Module-specific stuff
 PACKAGE   = gauche--groonga
