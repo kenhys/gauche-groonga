@@ -25,7 +25,7 @@ void Scm_Init_gauche_groonga(void)
     ScmModule *mod;
 
     /* Register this DSO to Gauche */
-    SCM_INIT_EXTENSION(gauche_groonga);
+    SCM_INIT_EXTENSION(groonga);
 
     /* Create the module if it doesn't exist yet. */
     mod = SCM_MODULE(SCM_FIND_MODULE("groonga", TRUE));
