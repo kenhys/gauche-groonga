@@ -105,3 +105,14 @@
 (define-enum GRN_COMMAND_VERSION_STABLE)
 (define-enum GRN_COMMAND_VERSION_MAX)
 
+;; grn_log_level
+(define-enum GRN_LOG_NONE)
+(define-enum GRN_LOG_EMERG)
+(define-enum GRN_LOG_ALERT)
+(define-enum GRN_LOG_CRIT)
+(define-enum GRN_LOG_ERROR)
+(define-enum GRN_LOG_WARNING)
+(define-enum GRN_LOG_NOTICE)
+(define-enum GRN_LOG_INFO)
+(define-enum GRN_LOG_DEBUG)
+(define-enum GRN_LOG_DUMP)
