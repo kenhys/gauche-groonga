@@ -195,4 +195,27 @@
    (^ (index arg) (mktest-proc index arg)) arg))
 (mktest grn-log-level)
 
+;;;
+;;; GRN_CTX_
+;;;
+(test-section "grn_ctx_*")
+
+(define grn-ctx
+  `((GRN_CTX_MSGSIZE ,GRN_CTX_MSGSIZE 128)
+    (GRN_CTX_FIN ,GRN_CTX_FIN 255)
+    (GRN_CTX_USE_QL ,GRN_CTX_USE_QL 3)
+    (GRN_CTX_BATCH_MODE ,GRN_CTX_BATCH_MODE 4)
+    (GRN_CTX_PER_DB ,GRN_CTX_PER_DB 8)))
+
+(define (mktest-proc index arg)
+  (let* ([var (~ arg 0)]
+	 [val (~ arg 1)]
+	 [expected (~ arg 2)])
+    (test* (format #f "grn_command_version alias value of ~a" var) expected val)))
+
+(define (mktest arg)
+  (map-with-index
+   (^ (index arg) (mktest-proc index arg)) arg))
+(mktest grn-ctx)
+
 (test-end)

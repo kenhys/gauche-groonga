@@ -116,3 +116,11 @@
 (define-enum GRN_LOG_INFO)
 (define-enum GRN_LOG_DEBUG)
 (define-enum GRN_LOG_DUMP)
+
+;;
+(define-enum GRN_CTX_MSGSIZE)
+(define-enum GRN_CTX_FIN)
+
+(define-enum GRN_CTX_USE_QL)
+(define-enum GRN_CTX_BATCH_MODE)
+(define-enum GRN_CTX_PER_DB)
