@@ -111,7 +111,14 @@
     (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
     (set! (-> obj h) (* (grn_ctx_db (& (-> ctx h)))))
     (result obj)))
-  
+
+(define-cproc grn-ctx-get
+  (ctx::<grn-ctx> name::<const-cstring> name_size::<uint>) ::<grn-obj>
+  (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+    (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+    (set! (-> obj h) (* (grn_ctx_get (& (-> ctx h)) name name_size)))
+    (result obj)))
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
