@@ -21,8 +21,9 @@
 ;;                              const void *key, unsigned int key_size, int *added);
 ;; GRN_API grn_id grn_table_get(grn_ctx *ctx, grn_obj *table,
 ;;                              const void *key, unsigned int key_size);
-;; GRN_API grn_id grn_table_at(grn_ctx *ctx, grn_obj *table, grn_id id);
-
+(define-cproc grn-table-at
+  (ctx::<grn-ctx> table::<grn-obj> id::<uint>) ::<uint>
+  (result (grn_table_at (& (-> ctx h)) (& (-> table h)) id)))
 
 ;; GRN_API grn_id grn_table_lcp_search(grn_ctx *ctx, grn_obj *table,
 ;;                                     const void *key, unsigned int key_size);
