@@ -208,3 +208,6 @@
 (define-enum GRN_COLUMN_FIX_SIZE)
 (define-enum GRN_COLUMN_VAR_SIZE)
 (define-enum GRN_COLUMN_INDEX)
+
+(define-enum GRN_OBJ_REFER)
+(define-enum GRN_OBJ_OUTPLACE)
