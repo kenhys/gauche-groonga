@@ -245,3 +245,17 @@
 (define-enum GRN_PROC_COMMAND)
 (define-enum GRN_PROC_FUNCTION)
 (define-enum GRN_PROC_HOOK)
+
+
+(define-enum GRN_CURSOR_ASCENDING)
+(define-enum GRN_CURSOR_DESCENDING)
+(define-enum GRN_CURSOR_GE)
+(define-enum GRN_CURSOR_GT)
+(define-enum GRN_CURSOR_LE)
+(define-enum GRN_CURSOR_LT)
+(define-enum GRN_CURSOR_BY_KEY)
+(define-enum GRN_CURSOR_BY_ID)
+(define-enum GRN_CURSOR_PREFIX)
+(define-enum GRN_CURSOR_SIZE_BY_BIT)
+(define-enum GRN_CURSOR_RK)
+
