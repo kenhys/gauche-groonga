@@ -145,7 +145,9 @@
   (ctx::<grn-ctx> path::<const-cstring>) ::<grn-rc>
   (result (grn_plugin_register_by_path (& (-> ctx h)) path)))
 
-;;GRN_API const char *grn_plugin_get_system_plugins_dir(void);
+(define-cproc grn-plugin-get-system-plugins-dir () ::<const-cstring>
+  (result (grn_plugin_get_system_plugins_dir)))
+
 ;;GRN_API const char *grn_plugin_get_suffix(void);
 
 
