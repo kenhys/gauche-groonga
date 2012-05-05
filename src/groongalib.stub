@@ -137,7 +137,10 @@
      (set! (-> obj h) (* (grn_type_create (& (-> ctx h)) name name_size flags size)))
      (result obj)))
 
-;;GRN_API grn_rc grn_plugin_register(grn_ctx *ctx, const char *name);
+(define-cproc grn-plugin-register
+  (ctx::<grn-ctx> name::<const-cstring>) ::<grn-rc>
+  (result (grn_plugin_register (& (-> ctx h)) name)))
+
 ;;GRN_API grn_rc grn_plugin_register_by_path(grn_ctx *ctx, const char *path);
 ;;GRN_API const char *grn_plugin_get_system_plugins_dir(void);
 ;;GRN_API const char *grn_plugin_get_suffix(void);
