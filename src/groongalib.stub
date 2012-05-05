@@ -126,6 +126,23 @@
     (set! (-> obj h) (* (grn_ctx_at (& (-> ctx h)) id)))
     (result obj)))
 
+(define-cproc grn-type-create
+  (ctx::<grn-ctx>
+   name::<const-cstring>
+   name_size::<uint>
+   flags::<uint>
+   size::<uint>) ::<grn-obj>
+   (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+     (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+     (set! (-> obj h) (* (grn_type_create (& (-> ctx h)) name name_size flags size)))
+     (result obj)))
+
+;;GRN_API grn_rc grn_plugin_register(grn_ctx *ctx, const char *name);
+;;GRN_API grn_rc grn_plugin_register_by_path(grn_ctx *ctx, const char *path);
+;;GRN_API const char *grn_plugin_get_system_plugins_dir(void);
+;;GRN_API const char *grn_plugin_get_suffix(void);
+
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
