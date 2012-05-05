@@ -97,6 +97,10 @@
     (set! (-> obj h) (* (grn_db_open (& (-> ctx h)) path)))
     (result obj)))
 
+(define-cproc grn-db-touch
+  (ctx::<grn-ctx> db::<grn-obj>) ::<void>
+  (grn_db_touch (& (-> ctx h)) (& (-> db h))))
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
