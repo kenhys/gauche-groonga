@@ -19,6 +19,7 @@ ScmObj test_gauche_groonga(void)
  */
 extern void Scm_Init_groongalib(ScmModule*);
 extern void Scm_Init_grn_const(ScmModule*);
+extern void Scm_Init_grn_table(ScmModule*);
 
 void Scm_Init_gauche_groonga(void)
 {
@@ -33,4 +34,5 @@ void Scm_Init_gauche_groonga(void)
     /* Register stub-generated procedures */
     Scm_Init_groongalib(mod);
     Scm_Init_grn_const(mod);
+    Scm_Init_grn_table(mod);
 }
