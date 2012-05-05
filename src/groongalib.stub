@@ -101,6 +101,10 @@
   (ctx::<grn-ctx> db::<grn-obj>) ::<void>
   (grn_db_touch (& (-> ctx h)) (& (-> db h))))
 
+(define-cproc grn-ctx-use
+  (ctx::<grn-ctx> db::<grn-obj>) ::<grn-rc>
+  (result (grn_ctx_use (& (-> ctx h)) (& (-> db h)))))
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
