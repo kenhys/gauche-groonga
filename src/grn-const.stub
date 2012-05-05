@@ -233,3 +233,9 @@
 (define-enum GRN_DB_TOKYO_GEO_POINT)
 (define-enum GRN_DB_WGS84_GEO_POINT)
 
+;; grn_builtin_tokenizer
+(define-enum GRN_DB_MECAB)
+(define-enum GRN_DB_DELIMIT)
+(define-enum GRN_DB_UNIGRAM)
+(define-enum GRN_DB_BIGRAM)
+(define-enum GRN_DB_TRIGRAM)
