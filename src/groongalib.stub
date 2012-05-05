@@ -105,6 +105,13 @@
   (ctx::<grn-ctx> db::<grn-obj>) ::<grn-rc>
   (result (grn_ctx_use (& (-> ctx h)) (& (-> db h)))))
 
+(define-cproc grn-ctx-db
+  (ctx::<grn-ctx>) ::<grn-obj>
+  (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+    (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+    (set! (-> obj h) (* (grn_ctx_db (& (-> ctx h)))))
+    (result obj)))
+  
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
