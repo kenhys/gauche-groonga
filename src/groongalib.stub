@@ -152,6 +152,23 @@
   (result (grn_plugin_get_suffix)))
 
 
+;; GRN_API grn_obj *grn_proc_create(grn_ctx *ctx,
+;; const char *name, unsigned int name_size, grn_proc_type type,
+;; grn_proc_func *init, grn_proc_func *next, grn_proc_func *fin,
+;; unsigned int nvars, grn_expr_var *vars);
+
+(define-cproc grn-table-create
+  (ctx::<grn-ctx>
+   name::<const-cstring> name_size::<uint>
+   path::<const-cstring> flags::<uint>
+   key_type::<grn-obj> value_type::<grn-obj>) ::<grn-obj>
+   (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+     (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+     (set! (-> obj h) (* (grn_table_create (& (-> ctx h)) name name_size
+					   path flags
+					   (& (-> key_type h)) (& (-> value_type h)))))
+     (result obj)))
+
 
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
