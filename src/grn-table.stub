@@ -4,6 +4,8 @@
 #include \"gauche_groonga.h\"
 "
 
+(include "gauche-groonga.types")
+
 (define-cproc grn-table-create
   (ctx::<grn-ctx>
    name::<const-cstring> name_size::<uint>
@@ -42,5 +44,5 @@
 ;;                                 const void *dest_key, unsigned int dest_key_size);
 
 (define-cproc grn-table-truncate
-  (ctx::<grn-ctx> table::<grn-obj) ::<grn-rc>
+  (ctx::<grn-ctx> table::<grn-obj>) ::<grn-rc>
   (result (grn_table_truncate (& (-> ctx h)) (& (-> table h)))))
