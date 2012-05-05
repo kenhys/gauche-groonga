@@ -43,7 +43,8 @@ GAUCHE_PKGARCHDIR = "$(DESTDIR)@GAUCHE_PKGARCHDIR@"
 
 gauche_groonga_SRCS = $(srcdir)/gauche_groonga.c \
 $(srcdir)/groongalib.stub \
-$(srcdir)/grn-const.stub
+$(srcdir)/grn-const.stub \
+$(srcdir)/grn-table.stub
 
 all : $(TARGET)
 

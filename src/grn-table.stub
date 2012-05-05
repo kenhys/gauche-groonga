@@ -1,0 +1,19 @@
+
+"
+#include \"groonga.h\"
+#include \"gauche_groonga.h\"
+"
+
+(define-cproc grn-table-create
+  (ctx::<grn-ctx>
+   name::<const-cstring> name_size::<uint>
+   path::<const-cstring> flags::<uint>
+   key_type::<grn-obj> value_type::<grn-obj>) ::<grn-obj>
+   (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+     (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+     (set! (-> obj h) (* (grn_table_create (& (-> ctx h)) name name_size
+					   path flags
+					   (& (-> key_type h)) (& (-> value_type h)))))
+     (result obj)))
+
+
