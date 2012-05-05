@@ -17,3 +17,29 @@
      (result obj)))
 
 
+;; GRN_API grn_id grn_table_add(grn_ctx *ctx, grn_obj *table,
+;;                              const void *key, unsigned int key_size, int *added);
+;; GRN_API grn_id grn_table_get(grn_ctx *ctx, grn_obj *table,
+;;                              const void *key, unsigned int key_size);
+;; GRN_API grn_id grn_table_at(grn_ctx *ctx, grn_obj *table, grn_id id);
+
+
+;; GRN_API grn_id grn_table_lcp_search(grn_ctx *ctx, grn_obj *table,
+;;                                     const void *key, unsigned int key_size);
+
+;; GRN_API int grn_table_get_key(grn_ctx *ctx, grn_obj *table,
+;;                               grn_id id, void *keybuf, int buf_size);
+
+;; GRN_API grn_rc grn_table_delete(grn_ctx *ctx, grn_obj *table,
+;;                                 const void *key, unsigned int key_size);
+;; GRN_API grn_rc grn_table_delete_by_id(grn_ctx *ctx, grn_obj *table, grn_id id);
+
+;; GRN_API grn_rc grn_table_update_by_id(grn_ctx *ctx, grn_obj *table, grn_id id,
+;;                                       const void *dest_key, unsigned int dest_key_size);
+;; GRN_API grn_rc grn_table_update(grn_ctx *ctx, grn_obj *table,
+;;                                 const void *src_key, unsigned int src_key_size,
+;;                                 const void *dest_key, unsigned int dest_key_size);
+
+(define-cproc grn-table-truncate
+  (ctx::<grn-ctx> table::<grn-obj) ::<grn-rc>
+  (result (grn_table_truncate (& (-> ctx h)) (& (-> table h)))))
