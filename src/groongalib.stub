@@ -69,7 +69,24 @@
   (ctx::<grn-ctx> version::<uint>) ::<grn-rc>
   (result (grn_ctx_set_command_version (& (-> ctx h)) version)))
 
+;; FIXME support long long int as return value
+(define-cproc grn-ctx-get-match-escalation-threshold
+  (ctx::<grn-ctx>) ::<long>
+  (result (grn_ctx_get_match_escalation_threshold (& (-> ctx h)))))
 
+;; FIXME support long long int as parameter value
+(define-cproc grn-ctx-set-match-escalation-threshold
+  (ctx::<grn-ctx> threshold::<long>) ::<grn-rc>
+  (result (grn_ctx_set_match_escalation_threshold (& (-> ctx h)) threshold)))
+
+;; FIXME support long long int as return value
+(define-cproc grn-get-default-match-escalation-threshold () ::<long>
+  (result (grn_get_default_match_escalation_threshold)))
+
+;; FIXME support long long int as parameter value
+(define-cproc grn-set-default-match-escalation-threshold
+  (threshold::<long>) ::<grn-rc>
+  (result (grn_set_default_match_escalation_threshold threshold)))
 
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
