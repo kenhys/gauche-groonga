@@ -239,3 +239,9 @@
 (define-enum GRN_DB_UNIGRAM)
 (define-enum GRN_DB_BIGRAM)
 (define-enum GRN_DB_TRIGRAM)
+
+;; grn_proc_type
+(define-enum GRN_PROC_TOKENIZER)
+(define-enum GRN_PROC_COMMAND)
+(define-enum GRN_PROC_FUNCTION)
+(define-enum GRN_PROC_HOOK)
