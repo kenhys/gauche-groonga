@@ -69,6 +69,8 @@
   (ctx::<grn-ctx> version::<uint>) ::<grn-rc>
   (result (grn_ctx_set_command_version (& (-> ctx h)) version)))
 
+
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
