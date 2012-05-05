@@ -88,6 +88,15 @@
   (threshold::<long>) ::<grn-rc>
   (result (grn_set_default_match_escalation_threshold threshold)))
 
+;; GRN_API grn_obj *grn_db_create(grn_ctx *ctx, const char *path, grn_db_create_optarg *optarg);
+
+(define-cproc grn-db-open
+  (ctx::<grn-ctx> path::<const-cstring>) ::<grn-obj>
+  (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+    (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+    (set! (-> obj h) (* (grn_db_open (& (-> ctx h)) path)))
+    (result obj)))
+
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
   ()
   ()
