@@ -211,3 +211,25 @@
 
 (define-enum GRN_OBJ_REFER)
 (define-enum GRN_OBJ_OUTPLACE)
+
+;; grn_builtin_type
+(define-enum GRN_DB_VOID)
+(define-enum GRN_DB_DB)
+(define-enum GRN_DB_OBJECT)
+(define-enum GRN_DB_BOOL)
+(define-enum GRN_DB_INT8)
+(define-enum GRN_DB_UINT8)
+(define-enum GRN_DB_INT16)
+(define-enum GRN_DB_UINT16)
+(define-enum GRN_DB_INT32)
+(define-enum GRN_DB_UINT32)
+(define-enum GRN_DB_INT64)
+(define-enum GRN_DB_UINT64)
+(define-enum GRN_DB_FLOAT)
+(define-enum GRN_DB_TIME)
+(define-enum GRN_DB_SHORT_TEXT)
+(define-enum GRN_DB_TEXT)
+(define-enum GRN_DB_LONG_TEXT)
+(define-enum GRN_DB_TOKYO_GEO_POINT)
+(define-enum GRN_DB_WGS84_GEO_POINT)
+
