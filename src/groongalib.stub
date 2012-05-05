@@ -148,7 +148,9 @@
 (define-cproc grn-plugin-get-system-plugins-dir () ::<const-cstring>
   (result (grn_plugin_get_system_plugins_dir)))
 
-;;GRN_API const char *grn_plugin_get_suffix(void);
+(define-cproc grn-plugin-get-suffix () ::<const-cstring>
+  (result (grn_plugin_get_suffix)))
+
 
 
 (define-cclass <grn-obj> :base "ScmGrnObj*" "Scm_GrnObjClass"
