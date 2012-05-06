@@ -43,6 +43,17 @@ SCM_CLASS_DECL(Scm_GrnCtxClass);
 #define SCM_GRN_CTX(obj) ((ScmGrnCtx*)(obj))
 #define SCM_GRN_CTX_P(obj) (SCM_XTYPEP(obj, SCM_CLASS_GRN_CTX))
 
+/* grn_table_cursor */
+typedef struct ScmGrnTableCursorRec {
+SCM_HEADER;
+grn_table_cursor h;
+} ScmGrnTableCursor;
+
+SCM_CLASS_DECL(Scm_GrnTableCursorClass);
+#define SCM_CLASS_GRN_TABLE_CURSOR (&Scm_GrnTableCursorClass)
+#define SCM_GRN_TABLE_CURSOR(obj) ((ScmGrnTableCursor*)(obj))
+#define SCM_GRN_TABLE_CURSOR_P(obj) (SCM_XTYPEP(obj, SCM_CLASS_GRN_TABLE_CURSOR))
+
 /* Epilogue */
 SCM_DECL_END
 

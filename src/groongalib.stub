@@ -173,6 +173,14 @@
      (SCM_SET_CLASS ctx klass)
      (return (SCM_OBJ ctx)))])
 
+(define-cclass <grn-table-cursor> :base "ScmGrnTableCursor*" "Scm_GrnTableCursorClass"
+  ()
+  ()
+  [allocator
+   (let* ([ctx::ScmGrnTableCursor* (SCM_ALLOCATE ScmGrnTableCursor klass)])
+     (SCM_SET_CLASS ctx klass)
+     (return (SCM_OBJ ctx)))])
+
 ;; Local variables:
 ;; mode: scheme
 ;; end:
