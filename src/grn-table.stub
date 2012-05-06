@@ -57,3 +57,13 @@
   (ctx::<grn-ctx> tc::<grn-table-cursor>) ::<grn-id>
   (result (grn_table_cursor_next (& (-> ctx h)) (& (-> tc h)))))
 
+;;(define-cproc grn-table-cursor-get-key
+
+;;(define-cproc grn-table-cursor-get-value
+
+;;(define-cproc grn-table-cursor-set-value
+
+(define-cproc grn-table-cursor-delete
+  (ctx::<grn-ctx> tc::<grn-table-cursor>) ::<grn-rc>
+  (result (grn_table_cursor_delete (& (-> ctx h)) (& (-> tc h)))))
+
