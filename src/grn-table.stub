@@ -67,3 +67,10 @@
   (ctx::<grn-ctx> tc::<grn-table-cursor>) ::<grn-rc>
   (result (grn_table_cursor_delete (& (-> ctx h)) (& (-> tc h)))))
 
+(define-cproc grn-table-cursor-table
+  (ctx::<grn-ctx> tc::<grn-table-cursor>) ::<grn-obj>
+  (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+     (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+     (set! (-> obj h) (* (grn_table_cursor_table (& (-> ctx h)) (& (-> tc h)))))
+     (result obj)))
+
