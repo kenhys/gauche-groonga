@@ -9,10 +9,16 @@
 (define-type <grn-command-version> "int" #f
   "SCM_GRN_COMMAND_VERSION_P" "SCM_GRN_COMMAND_VERSION")
 
+(define-type <grn-id> "unsigned int" #f
+  "SCM_GRN_ID_P" "SCM_GRN_ID")
+
 
 (define-type <grn-obj>  "ScmGrnObj*" #f
   "SCM_GRN_OBJ_P" "SCM_GRN_OBJ")
 
 (define-type <grn-ctx>  "ScmGrnCtx*" #f
   "SCM_GRN_CTX_P" "SCM_GRN_CTX")
+
+(define-type <grn-table-cursor>  "ScmGrnTableCursor*" #f
+  "SCM_GRN_TABLE_CURSOR_P" "SCM_GRN_TABLE_CURSOR")
 
