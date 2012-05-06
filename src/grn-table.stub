@@ -74,3 +74,14 @@
      (set! (-> obj h) (* (grn_table_cursor_table (& (-> ctx h)) (& (-> tc h)))))
      (result obj)))
 
+(define-cproc grn-index-cursor-open
+  (ctx::<grn-ctx>
+   tc::<grn-table-cursor>
+   index::<grn-obj> rid_min::<uint> rid_max::<uint> flags::<int>) ::<grn-obj>
+  (let* ([obj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+    (SCM_SET_CLASS obj SCM_CLASS_GRN_OBJ)
+    (set! (-> obj h) (* (grn_index_cursor_open
+			 (& (-> ctx h)) (& (-> tc h))
+			 (& (-> index h)) rid_min rid_max flags)))
+    (result obj)))
+
