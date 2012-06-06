@@ -1,0 +1,36 @@
+"
+#include \"groonga.h\"
+#include \"gauche_groonga.h\"
+"
+
+(define-enum GRN_INFO_ENCODING)
+(define-enum GRN_INFO_SOURCE)
+(define-enum GRN_INFO_DEFAULT_TOKENIZER)
+(define-enum GRN_INFO_ELEMENT_SIZE)
+(define-enum GRN_INFO_CURR_MAX)
+(define-enum GRN_INFO_MAX_ELEMENT_SIZE)
+(define-enum GRN_INFO_SEG_SIZE)
+(define-enum GRN_INFO_CHUNK_SIZE)
+(define-enum GRN_INFO_MAX_SECTION)
+(define-enum GRN_INFO_HOOK_LOCAL_DATA)
+(define-enum GRN_INFO_ELEMENT_A)
+(define-enum GRN_INFO_ELEMENT_CHUNK)
+(define-enum GRN_INFO_ELEMENT_CHUNK_SIZE)
+(define-enum GRN_INFO_ELEMENT_BUFFER_FREE)
+(define-enum GRN_INFO_ELEMENT_NTERMS)
+(define-enum GRN_INFO_ELEMENT_NTERMS_VOID)
+(define-enum GRN_INFO_ELEMENT_SIZE_IN_CHUNK)
+(define-enum GRN_INFO_ELEMENT_POS_IN_CHUNK)
+(define-enum GRN_INFO_ELEMENT_SIZE_IN_BUFFER)
+(define-enum GRN_INFO_ELEMENT_POS_IN_BUFFER)
+(define-enum GRN_INFO_ELEMENT_ESTIMATE_SIZE)
+(define-enum GRN_INFO_NGRAM_UNIT_SIZE)
+
+(define-enum GRN_INFO_VERSION)
+(define-enum GRN_INFO_CONFIGURE_OPTIONS)
+(define-enum GRN_INFO_CONFIG_PATH)
+
+(define-enum GRN_INFO_PARTIAL_MATCH_THRESHOLD)
+(define-enum GRN_INFO_II_SPLIT_THRESHOLD)
+(define-enum GRN_INFO_SUPPORT_ZLIB)
+(define-enum GRN_INFO_SUPPORT_LZO)
