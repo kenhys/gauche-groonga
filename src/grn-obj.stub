@@ -3,6 +3,8 @@
 #include \"gauche_groonga.h\"
 "
 
+(include "gauche-groonga.types")
+
 (define-enum GRN_INFO_ENCODING)
 (define-enum GRN_INFO_SOURCE)
 (define-enum GRN_INFO_DEFAULT_TOKENIZER)
@@ -26,11 +28,25 @@
 (define-enum GRN_INFO_ELEMENT_ESTIMATE_SIZE)
 (define-enum GRN_INFO_NGRAM_UNIT_SIZE)
 
-(define-enum GRN_INFO_VERSION)
-(define-enum GRN_INFO_CONFIGURE_OPTIONS)
-(define-enum GRN_INFO_CONFIG_PATH)
+;;(define-enum GRN_INFO_VERSION)
+;;(define-enum GRN_INFO_CONFIGURE_OPTIONS)
+;;(define-enum GRN_INFO_CONFIG_PATH)
 
 (define-enum GRN_INFO_PARTIAL_MATCH_THRESHOLD)
 (define-enum GRN_INFO_II_SPLIT_THRESHOLD)
 (define-enum GRN_INFO_SUPPORT_ZLIB)
 (define-enum GRN_INFO_SUPPORT_LZO)
+
+(define-cproc grn-obj-get-info
+  (ctx::<grn-ctx>
+   obj::<grn-obj> type::<uint>
+   valuebuf::<grn-obj>) ::<grn-obj>
+   (let* ([newobj::ScmGrnObj* (SCM_NEW ScmGrnObj)])
+     (SCM_SET_CLASS newobj SCM_CLASS_GRN_OBJ)
+     (set! (-> newobj h) (* (grn_obj_get_info (& (-> ctx h)) 
+					      (& (-> obj h)) 
+					      type
+					      (& (-> valuebuf h)))))
+     (result newobj)))
+
+;;GRN_API grn_rc grn_obj_set_info(grn_ctx *ctx, grn_obj *obj, grn_info_type type, grn_obj *value)
